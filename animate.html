@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Aninmate</title>
+    <script src="animation.js"></script>
+    <style type="text/css">
+      @keyframes grow {
+        from {
+          font-size: 0px;
+          color: red;
+          /*top: 100px;*/
+        }
+        to {
+          font-size: 150px;
+          color: green;
+          /*top: 100px;*/
+        }
+        100% {
+          font-size: 100px;
+        }
+      }
+      h1 {
+        text-align: center;
+        position: relative;
+        animation-name: grow;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        font-family: sans-serif;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <button>Click Here!</button>
+    <h1>Welcome!</h1>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hide</title>
+    <style type="text/css">
+
+      @keyframes hide {
+        0% {
+          opacity: 1;
+          height: 100%;
+          line-height: 100%;
+          padding: 20px;
+          margin-bottom: 16px;        }
+
+        75% {
+          opacity: 0;
+          height: 100%;
+          line-height: 100%;
+          padding: 20px;
+          margin-bottom: 16px;
+        }
+
+        100% {
+          opacity: 0;
+          height: 0px;
+          line-height: 0px;
+          padding: 0px;
+          margin-bottom: 0px;
+        }
+      }
+
+      .post {
+        width: 80%%;
+        background: green;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 10px;
+        margin-bottom: 16px;
+        animation-name: hide;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+      }
+
+      .hide {
+        height: 20px;
+      }
+
+    </style>
+    <script type="text/javascript">
+      document.addEventListener('click', event => {
+        const element = event.target;
+        if (element.className === 'hide') {
+          element.parentElement.style.animationPlayState = 'running'
+          element.parentElement.addEventListener('animationend', () => {
+            element.parentElement.remove();
+          });
+        }
+      });
+
+    </script>
+  </head>
+  <body>
+  <div class="post">
+    <h1>Post #1</h1>
+    <button class="hide">Hide</button>
+  </div>
+  <div class="post">
+    <h1>Post #2</h1>
+    <button class="hide">Hide</button>
+  </div>
+  <div class="post">
+    <h1>Post #3</h1>
+    <button class="hide">Hide</button>
+  </div>
+  </body>
+</html>
